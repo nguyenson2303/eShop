@@ -1,4 +1,4 @@
-﻿using eShop.Application.Catalog.Products.Dtos;
+﻿using eShop.Application.Catalog.Products.Dtos.Manage;
 using eShop.Application.Dtos;
 using System;
 using System.Collections.Generic;
@@ -6,11 +6,8 @@ using System.Text;
 
 namespace eShop.Application.Catalog.Products
 {
-    public class PublicProductService : IPublicProductService
+    public class PublicProductService
     {
-        public PageViewModel<ProductViewModel> GetAllByCAtegoryId(int categoryId, int pageIndex, int pageSize)
-        {
-            throw new NotImplementedException();
-        }
+        public int CategoryId { get; set; }
     }
 }
