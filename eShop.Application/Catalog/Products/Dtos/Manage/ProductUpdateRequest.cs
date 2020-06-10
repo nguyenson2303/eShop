@@ -2,17 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace eShop.Application.Catalog.Products.Dtos
+namespace eShop.Application.Catalog.Products.Dtos.Manage
 {
-    public class ProductViewModel
+    public class ProductUpdateRequest
     {
         public int id { get; set; }
-        public decimal Price { get; set; }
-        public decimal OriginalPrice { get; set; }
-        public int Stock { get; set; }
-        public int ViewCount { get; set; }
-        public DateTime DateCreated { get; set; }
-
         public string Name { get; set; }
         public string Description { get; set; }
         public string Details { get; set; }
@@ -21,5 +15,7 @@ namespace eShop.Application.Catalog.Products.Dtos
 
         public string SeoAlias { get; set; }
         public string LanguageId { get; set; }
+
+
     }
 }
