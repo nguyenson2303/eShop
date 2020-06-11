@@ -1,9 +1,6 @@
 ﻿using eShop.Application.Catalog.Products.Dtos;
 using eShop.Application.Catalog.Products.Dtos.Manage;
 using eShop.Application.Dtos;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace eShop.Application.Catalog.Products
@@ -15,8 +12,7 @@ namespace eShop.Application.Catalog.Products
         Task<int> Delete(int productId);
         Task<bool> UpdatePrice(int productId, decimal newPrice);
         Task<bool> UpdateStock(int productId, int addedQuantity);
-        Task AddViewcount(int productId);
-        Task<List<ProductViewModel>> GetAll();
+        Task AddViewcount(int productId);      
         Task<PagedResult<ProductViewModel>> GetAllPaging(GetProductPagingRequest request);
     }
 }

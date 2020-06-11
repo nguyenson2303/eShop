@@ -15,7 +15,5 @@ namespace eShop.Application.Catalog.Products.Dtos.Manage
 
         public string SeoAlias { get; set; }
         public string LanguageId { get; set; }
-
-
     }
 }
