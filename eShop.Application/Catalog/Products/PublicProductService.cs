@@ -5,7 +5,6 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using eShop.ViewModels.Catalog.Products;
 using eShop.ViewModels.Common;
-using eShop.ViewModels.Catalog.Products.Public;
 
 namespace eShop.Application.Catalog.Products
 {

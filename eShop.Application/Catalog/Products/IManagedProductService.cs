@@ -1,5 +1,4 @@
 ﻿using eShop.ViewModels.Catalog.Products;
-using eShop.ViewModels.Catalog.Products.Manage;
 using eShop.ViewModels.Common;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;

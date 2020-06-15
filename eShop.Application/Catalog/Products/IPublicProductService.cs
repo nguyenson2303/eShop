@@ -1,5 +1,4 @@
 ﻿using eShop.ViewModels.Catalog.Products;
-using eShop.ViewModels.Catalog.Products.Public;
 using eShop.ViewModels.Common;
 using System.Collections.Generic;
 using System.Threading.Tasks;
