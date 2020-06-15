@@ -3,7 +3,6 @@ using eShop.Data.Entities;
 using eShop.Data.EntityFramework;
 using eShop.Utilities.Exceptions;
 using eShop.ViewModels.Catalog.Products;
-using eShop.ViewModels.Catalog.Products.Manage;
 using eShop.ViewModels.Common;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
