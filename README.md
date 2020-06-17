@@ -11,4 +11,6 @@
 - Microsoft.AspNetCore.Identity.EntityFrameworkCore
 - Microsoft.AspNetCore.Hosting
 - Swashbuckle.AspNetCore
+- Microsoft.IdentityModel.Tokens
+- System.IdentityModel.Tokens.Jwt
 ## Tutorial
