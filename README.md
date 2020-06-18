@@ -13,4 +13,6 @@
 - Swashbuckle.AspNetCore
 - Microsoft.IdentityModel.Tokens
 - System.IdentityModel.Tokens.Jwt
+- Microsoft.AspNetCore.Authentication.JwtBearer
+- FluentValidation.AspNetCore
 ## Tutorial

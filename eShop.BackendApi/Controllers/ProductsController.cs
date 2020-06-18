@@ -2,16 +2,19 @@
 using eShop.Application.Catalog.Products;
 using eShop.ViewModels.Catalog.ProductImages;
 using eShop.ViewModels.Catalog.Products;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eShop.BackendApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProductsController : ControllerBase
     {
         private readonly IPublicProductService _publicProductService;
         private readonly IManageProductService _manageProductService;
+
         public ProductsController(IPublicProductService publicProductService, IManageProductService managedProductService)
         {
             _publicProductService = publicProductService;
@@ -20,7 +23,7 @@ namespace eShop.BackendApi.Controllers
 
         // http://localhost:port/products?pageIndex=1&pageSize=10&CategoryId=
         [HttpGet("{languageId}")]
-        public async Task<IActionResult> GetAllPaging(string languageId, [FromQuery]GetPublicProductPagingRequest request)
+        public async Task<IActionResult> GetAllPaging(string languageId, [FromQuery] GetPublicProductPagingRequest request)
         {
             var products = await _publicProductService.GetAllByCategoryId(languageId, request);
             return Ok(products);
@@ -36,7 +39,7 @@ namespace eShop.BackendApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromForm]ProductCreateRequest request)
+        public async Task<IActionResult> Create([FromForm] ProductCreateRequest request)
         {
             if (!ModelState.IsValid)
             {
@@ -54,13 +57,13 @@ namespace eShop.BackendApi.Controllers
         [HttpPut]
         public async Task<IActionResult> Update([FromForm] ProductUpdateRequest request)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
             var affectedResult = await _manageProductService.Update(request);
             if (affectedResult == 0)
-                return BadRequest();          
+                return BadRequest();
             return Ok();
         }
 
@@ -80,7 +83,6 @@ namespace eShop.BackendApi.Controllers
             if (isSuccessful)
                 return Ok();
             return BadRequest();
-            
         }
 
         // Images
@@ -109,7 +111,7 @@ namespace eShop.BackendApi.Controllers
             }
             var result = await _manageProductService.UpdateImage(imageId, request);
             if (result == 0)
-                return BadRequest();         
+                return BadRequest();
 
             return Ok();
         }
