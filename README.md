@@ -15,4 +15,6 @@
 - System.IdentityModel.Tokens.Jwt
 - Microsoft.AspNetCore.Authentication.JwtBearer
 - FluentValidation.AspNetCore
+- Microsoft.VisualStudio.Web.CodeGeneration.Design    (eShop.AdminApp)
+- Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation    (eShop.AdminApp)
 ## Tutorial
