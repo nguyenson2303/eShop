@@ -1,9 +1,7 @@
 ﻿using FluentValidation;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace eShop.ViewModels.System
+namespace eShop.ViewModels.System.Users
 {
     public class RegisterRequestValidator : AbstractValidator<RegisterRequest>
     {
