@@ -20,4 +20,5 @@
 - Microsoft.IdentityModel.Logging    (eShop.AdminApp)
 - Microsoft.IdentityModel.Tokens    (eShop.AdminApp)
 - System.IdentityModel.Tokens.Jwt    (eShop.AdminApp)
+- Microsoft.AspNetCore.Session    (eShop.AdminApp)
 ## Tutorial

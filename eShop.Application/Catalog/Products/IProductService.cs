@@ -1,13 +1,12 @@
 ﻿using eShop.ViewModels.Catalog.ProductImages;
 using eShop.ViewModels.Catalog.Products;
 using eShop.ViewModels.Common;
-using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace eShop.Application.Catalog.Products
 {
-    public interface IManageProductService
+    public interface IProductService
     {
         Task<int> Create(ProductCreateRequest request);
 
@@ -21,7 +20,7 @@ namespace eShop.Application.Catalog.Products
 
         Task<bool> UpdateStock(int productId, int addedQuantity);
 
-        Task AddViewcount(int productId);      
+        Task AddViewcount(int productId);
 
         Task<PagedResult<ProductViewModel>> GetAllPaging(GetManageProductPagingRequest request);
 
@@ -30,8 +29,11 @@ namespace eShop.Application.Catalog.Products
         Task<int> RemoveImage(int imageId);
 
         Task<int> UpdateImage(int imageId, ProductImageUpdateRequest request);
+
         Task<ProductImageViewModel> GetImageById(int imageId);
 
         Task<List<ProductImageViewModel>> GetListImages(int productId);
+
+        Task<PagedResult<ProductViewModel>> GetAllByCategoryId(string languageId, GetPublicProductPagingRequest request);
     }
 }
