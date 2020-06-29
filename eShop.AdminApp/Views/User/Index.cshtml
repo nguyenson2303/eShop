@@ -1,5 +1,5 @@
 ﻿@using eShop.ViewModels.Common;
-@model PagedResult<eShop.ViewModels.System.UserViewModel>
+@model PagedResult<eShop.ViewModels.System.Users.UserViewModel>
 
 @{
     ViewData["Title"] = "List of Users";
@@ -65,9 +65,9 @@
                                     @Html.DisplayFor(modelItem => item.Email)
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
                                 </td>
                             </tr>
                         }
