@@ -75,7 +75,8 @@ namespace eShop.Application.System.Users
                 FirstName = user.FirstName,
                 Dob = user.Dob,
                 id = user.Id,
-                LastName = user.LastName
+                LastName = user.LastName,
+                UserName = user.UserName
             };
             return new ApiSuccessResult<UserViewModel>(userViewModel);
         }
@@ -107,7 +108,9 @@ namespace eShop.Application.System.Users
             //4. Select and projection
             var pagedResult = new PagedResult<UserViewModel>()
             {
-                TotalRecord = totalRow,
+                TotalRecords = totalRow,
+                PageIndex = request.PageIndex,
+                PageSize = request.PageSize,
                 Items = data
             };
             return new ApiSuccessResult<PagedResult<UserViewModel>>(pagedResult);
@@ -122,7 +125,7 @@ namespace eShop.Application.System.Users
             }
             if (await _userManager.FindByEmailAsync(request.Email) != null)
             {
-                return new ApiErrorResult<bool>("Emai already exist");
+                return new ApiErrorResult<bool>("Email already exist");
             }
 
             user = new AppUser()
