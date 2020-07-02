@@ -56,9 +56,6 @@
                     <thead>
                         <tr>
                             <th>
-                                Id
-                            </th>
-                            <th>
                                 FirstName
                             </th>
                             <th>
@@ -73,16 +70,15 @@
                             <th>
                                 Email
                             </th>
-                            <th></th>
+                            <th>
+                                Action
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var item in Model.Items)
                         {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.id)
-                                </td>
+                            <tr>                               
                                 <td>
                                     @Html.DisplayFor(modelItem => item.FirstName)
                                 </td>
@@ -99,9 +95,10 @@
                                     @Html.DisplayFor(modelItem => item.Email)
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-success" }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-warning" }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-danger" }) |
+                                    @Html.ActionLink("RoleAssign", "RoleAssign", new { id = item.id }, new { @class = "btn btn-info" })
                                 </td>
                             </tr>
                         }
