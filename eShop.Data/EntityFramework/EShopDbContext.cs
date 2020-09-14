@@ -10,11 +10,12 @@ using System.Text;
 
 namespace eShop.Data.EntityFramework
 {
-    public class EShopDbContext : IdentityDbContext<AppUser,AppRole,Guid>
+    public class EShopDbContext : IdentityDbContext<AppUser, AppRole, Guid>
     {
         public EShopDbContext(DbContextOptions options) : base(options)
         {
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CartConfiguration());
@@ -38,7 +39,7 @@ namespace eShop.Data.EntityFramework
             modelBuilder.ApplyConfiguration(new AppRoleConfiguration());
 
             modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaim");
-            modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRole").HasKey(x => new { x.UserId, x.RoleId});
+            modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRole").HasKey(x => new { x.UserId, x.RoleId });
             modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogin").HasKey(x => x.UserId);
             modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaim");
             modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppRoleToken").HasKey(x => x.UserId);
@@ -46,11 +47,11 @@ namespace eShop.Data.EntityFramework
             modelBuilder.Seed();
             // base.OnModelCreating(modelBuilder);
         }
+
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<AppConfig> AppConfigs { get; set; }
-
 
         public DbSet<Cart> Carts { get; set; }
 
